@@ -50,6 +50,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun onItemEdit(burguermodel: BurguerModelViewPager) {
+        val intent = Intent(this,PersonalizarActivity::class.java)
+        intent.putExtra("foto",burguermodel.fotoburguer)
+        intent.putExtra("precio",burguermodel.precio)
+        intent.putExtra("nombre",burguermodel.nombre)
+        intent.putExtra("ingrediente1",burguermodel.ingrediente1)
+        intent.putExtra("ingrediente2",burguermodel.ingrediente2)
+        intent.putExtra("ingrediente3",burguermodel.ingrediente3)
+        intent.putExtra("ingrediente4",burguermodel.ingrediente4)
+        intent.putExtra("ingrediente5",burguermodel.ingrediente5)
+        startActivity(intent)
         Toast.makeText(this,"Has seleccionado ${burguermodel.nombre}",Toast.LENGTH_SHORT).show()
     }
 
