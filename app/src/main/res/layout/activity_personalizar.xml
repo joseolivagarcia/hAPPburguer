@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/greylight">
+    android:background="@color/white">
 
     <ImageView
         android:id="@+id/fotoburguer"
@@ -54,6 +55,13 @@
         android:text="PERSONALIZA TU HAMBURGUESA"
         android:textStyle="italic"
         android:gravity="center"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toBottomOf="@id/tvdescripcion"
+        android:background="@color/marron">
     <CheckBox
         android:id="@+id/cbingrediente1"
         android:layout_width="wrap_content"
@@ -63,6 +71,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="10dp"
         android:text="Ingrediente 1"
+        android:textColor="@color/white"
         android:gravity="center"
         android:checked="true"/>
     <CheckBox
@@ -74,6 +83,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="5dp"
         android:text="Ingrediente 2"
+        android:textColor="@color/white"
         android:gravity="center"
         android:checked="true"/>
     <CheckBox
@@ -85,6 +95,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="5dp"
         android:text="Ingrediente 3"
+        android:textColor="@color/white"
         android:gravity="center"
         android:checked="true"/>
     <CheckBox
@@ -96,6 +107,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="5dp"
         android:text="Ingrediente 4"
+        android:textColor="@color/white"
         android:gravity="center"
         android:checked="true"/>
     <CheckBox
@@ -107,8 +119,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="5dp"
         android:text="Ingrediente 5"
+        android:textColor="@color/white"
         android:gravity="center"
         android:checked="true"/>
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -119,6 +133,12 @@
         app:layout_constraintVertical_bias="0.976"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
+        <ImageView
+            android:id="@+id/btnaddcarro"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_addcarro"
+            android:layout_marginRight="20dp"/>
 
         <ImageView
             android:id="@+id/btncarrito"

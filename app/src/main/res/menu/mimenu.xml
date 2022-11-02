@@ -4,13 +4,13 @@
 
     <item
         android:id="@+id/home"
-        android:icon="@drawable/ic_home"
+        android:icon="@drawable/ic_casa"
         android:title="Home"
         android:iconTint="@color/white"
         app:showAsAction="always" />
     <item
         android:id="@+id/carrito"
-        android:icon="@drawable/ic_carrito"
+        android:icon="@drawable/ic_carro"
         android:title="Carrito"
         android:iconTint="@color/white"
         app:showAsAction="always" />

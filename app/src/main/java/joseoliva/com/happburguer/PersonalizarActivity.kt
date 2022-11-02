@@ -40,7 +40,7 @@ class PersonalizarActivity : AppCompatActivity() {
         cbingrediente3 = binding.cbingrediente3
         cbingrediente4 = binding.cbingrediente4
         cbingrediente5 = binding.cbingrediente5
-        btncarrito = binding.btncarrito
+        btncarrito = binding.btnaddcarro
 
         //recojo los datos que vengan de la main activity
         val fotorecibida = intent.getIntExtra("foto",1)
