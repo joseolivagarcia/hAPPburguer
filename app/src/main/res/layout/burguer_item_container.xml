@@ -13,7 +13,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:src="@color/black"/>
+        tools:src="@color/black"
+        android:scaleType="centerCrop"/>
 
     <TextView
         android:id="@+id/tvprecio"
@@ -29,13 +30,24 @@
         android:textSize="24dp"
         android:textColor="@color/black"/>
     <TextView
+        android:id="@+id/tvnombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tvprecio"
+        app:layout_constraintBottom_toTopOf="@id/tvdescripcion"
+        android:gravity="center"
+        tools:text="Nombre"
+        android:textSize="20dp"
+        android:textStyle="bold|italic"
+        android:layout_marginTop="5dp"/>
+    <TextView
         android:id="@+id/tvdescripcion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
-        app:layout_constraintTop_toBottomOf="@id/tvprecio"
+        app:layout_constraintTop_toBottomOf="@id/tvnombre"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:textColor="@color/black"
