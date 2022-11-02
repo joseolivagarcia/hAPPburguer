@@ -13,7 +13,7 @@ class BurguerItemsAdapter(
     //recibo la lista de las burguers y dos funciones lambda que se ejecutaran en el main activity
     private val listaBurguers: List<BurguerModelViewPager>,
     private val onClickEditar: (BurguerModelViewPager) -> Unit,
-    private val onClickCarrito: () -> Unit) :
+    private val onClickCarrito: (BurguerModelViewPager) -> Unit) :
     RecyclerView.Adapter<BurguerItemsAdapter.BurguerViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BurguerViewHolder {
@@ -54,7 +54,7 @@ class BurguerItemsAdapter(
         fun render(
             burgueritem: BurguerModelViewPager,
             onClickEditar: (BurguerModelViewPager) -> Unit,
-            onClickCarrito: () -> Unit
+            onClickCarrito: (BurguerModelViewPager) -> Unit
         ) {
             //relleno las vistas con los datos que traigo de cada item de la lista
             fotoburguer.setImageResource(burgueritem.fotoburguer)
@@ -72,7 +72,7 @@ class BurguerItemsAdapter(
             }
 
             btncarrito.setOnClickListener {
-                onClickCarrito()
+                onClickCarrito(burgueritem)
             }
         }
     }
