@@ -1,5 +1,6 @@
 package joseoliva.com.happburguer
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.CheckBox
@@ -89,10 +90,21 @@ class PersonalizarActivity : AppCompatActivity() {
             }else{
                 ing5 = "Sin $ing5recibido"
             }
-
-            Toast.makeText(this,"La hamburguesa va  $ing1, $ing2, $ing3, $ing4, $ing5",Toast.LENGTH_SHORT).show()
+            val seleccion = "Has eleegido tu hamburguesa $ing1, $ing2, $ing3, $ing4, $ing5"
+            Toast.makeText(this,"Has eleegido tu hamburguesa $ing1, $ing2, $ing3, $ing4, $ing5",Toast.LENGTH_SHORT).show()
         }
 
+        //funcionalidad para el boton de tramitar pedido
+        binding.btnctramitar.setOnClickListener {
+            val intent = Intent(this,CarritoActivity::class.java)
+            startActivity(intent)
+        }
 
+        //funcionalidad para el boton home
+        binding.btnhome.setOnClickListener {
+            val intent = Intent(this,MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 }

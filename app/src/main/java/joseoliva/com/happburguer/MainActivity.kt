@@ -36,13 +36,25 @@ class MainActivity : AppCompatActivity() {
 
     private fun setBurguersViewpager() {
         //inizializo el adapter y le paso una lista que relleno manualmente con las burguers que quiera mostrar
-        //y le paso las dos funciones a ejecutar cuando pulse en editar o en carrito
+        //y le paso las funciones a ejecutar cuando pulse en editar o en carrito o en tramitar pedidos
         burguerAdapter = BurguerItemsAdapter(burguerlistppal,
         onClickEditar = {burguermodel -> onItemEdit(burguermodel)},
-        onClickCarrito = {burguermodel -> onItemCarrito(burguermodel)})
+        onClickCarrito = {burguermodel -> onItemCarrito(burguermodel)},
+        onClickPedidos = {onItemPedidos()},
+        onClickPagar = {onItemPagar()})
         //inicializo el viewPager y le paso el adapter
         val burguersViewPager = findViewById<ViewPager2>(R.id.vp2)
         burguersViewPager.adapter = burguerAdapter
+    }
+
+    private fun onItemPagar() {
+        Toast.makeText(this,"Has añadido pulsado pagar",Toast.LENGTH_SHORT).show()
+    }
+
+    private fun onItemPedidos() {
+        val intent = Intent(this,CarritoActivity::class.java)
+        startActivity(intent)
+
     }
 
     private fun onItemCarrito(burguermodel: BurguerModelViewPager) {
@@ -73,11 +85,18 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.home -> {
-                Toast.makeText(this,"home",Toast.LENGTH_SHORT).show()
-                return true
+                val intent = Intent(this,MainActivity::class.java)
+                startActivity(intent)
+                return  true
             }
-            R.id.carrito -> {
-                Toast.makeText(this,"carrito",Toast.LENGTH_SHORT).show()
+            R.id.pedidos -> {
+                val intent = Intent(this,CarritoActivity::class.java)
+                startActivity(intent)
+                return  true
+            }
+            R.id.pagar -> {
+                val intent = Intent(this,CarritoActivity::class.java)
+                startActivity(intent)
                 return  true
             }
 

@@ -13,7 +13,10 @@ class BurguerItemsAdapter(
     //recibo la lista de las burguers y dos funciones lambda que se ejecutaran en el main activity
     private val listaBurguers: List<BurguerModelViewPager>,
     private val onClickEditar: (BurguerModelViewPager) -> Unit,
-    private val onClickCarrito: (BurguerModelViewPager) -> Unit) :
+    private val onClickCarrito: (BurguerModelViewPager) -> Unit,
+    private val onClickPedidos: () -> Unit,
+    private val onClickPagar: () -> Unit
+) :
     RecyclerView.Adapter<BurguerItemsAdapter.BurguerViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BurguerViewHolder {
@@ -28,7 +31,7 @@ class BurguerItemsAdapter(
 
     override fun onBindViewHolder(holder: BurguerViewHolder, position: Int) {
         //pasamos cada elemento de la lista al ViewHolder
-        holder.render(listaBurguers[position],onClickEditar,onClickCarrito)
+        holder.render(listaBurguers[position],onClickEditar,onClickCarrito,onClickPedidos,onClickPagar)
     }
 
     override fun getItemCount(): Int {
@@ -50,11 +53,15 @@ class BurguerItemsAdapter(
 
         val btneditar = view.findViewById<ImageView>(R.id.btneditar)
         val btncarrito = view.findViewById<ImageView>(R.id.btncarrito)
+        val btnpedidos = view.findViewById<ImageView>(R.id.btntramitar)
+        val btnpagar = view.findViewById<ImageView>(R.id.btnpagar)
 
         fun render(
             burgueritem: BurguerModelViewPager,
             onClickEditar: (BurguerModelViewPager) -> Unit,
-            onClickCarrito: (BurguerModelViewPager) -> Unit
+            onClickCarrito: (BurguerModelViewPager) -> Unit,
+            onClickPedidos: () -> Unit,
+            onClickPagar: () -> Unit
         ) {
             //relleno las vistas con los datos que traigo de cada item de la lista
             fotoburguer.setImageResource(burgueritem.fotoburguer)
@@ -74,6 +81,15 @@ class BurguerItemsAdapter(
             btncarrito.setOnClickListener {
                 onClickCarrito(burgueritem)
             }
+
+            btnpedidos.setOnClickListener {
+                onClickPedidos()
+            }
+
+            btnpagar.setOnClickListener {
+                onClickPagar()
+            }
+
         }
     }
 }

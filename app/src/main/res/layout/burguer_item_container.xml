@@ -142,7 +142,19 @@
             android:id="@+id/btncarrito"
             android:layout_width="40dp"
             android:layout_height="40dp"
+            android:layout_marginRight="20dp"
             android:src="@drawable/ic_addcarro" />
+        <ImageView
+            android:id="@+id/btntramitar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/ic_carrito"/>
+        <ImageView
+            android:id="@+id/btnpagar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/creditcard"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
