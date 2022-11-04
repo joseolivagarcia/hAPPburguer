@@ -22,6 +22,7 @@ class CarritoActivity : AppCompatActivity() {
     lateinit var binding: ActivityCarritoBinding
     lateinit var viewModel: BurguerViewModel
     lateinit var recyclerview: RecyclerView
+    var preciototal = 0f
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,7 +52,7 @@ class CarritoActivity : AppCompatActivity() {
         viewModel.listaburguers.observe(this, Observer { list -> list?.let{
             //actualizamos la lista
             burguerRVAdapter.updateList(it)
-            binding.tvpreciototal.text = viewModel.preciototalpedido.toString()
+            sumarprecios(it)
         }
         })
 
@@ -60,6 +61,27 @@ class CarritoActivity : AppCompatActivity() {
             val intent = Intent(this,MainActivity::class.java)
             startActivity(intent)
             finish()
+        }
+
+        //funcionalidad del boton pagar
+        binding.pagarpedido.setOnClickListener {
+            val intent = Intent(this,PagarActivity::class.java)
+            intent.putExtra("precio", preciototal)
+            startActivity(intent)
+            finish()
+        }
+
+    }
+
+    private fun sumarprecios(it: List<BurguerPedida>) {
+        preciototal = 0f
+        if(it.size > 0){
+            for(b in it){
+                preciototal += b.precio.toFloat()
+                binding.tvpreciototal.text = preciototal.toString() + "€"
+            }
+        }else{
+            binding.tvpreciototal.text = preciototal.toString() + "€"
         }
 
     }
@@ -95,17 +117,21 @@ class CarritoActivity : AppCompatActivity() {
                 return  true
             }
             R.id.pedidos -> {
-                val intent = Intent(this,CarritoActivity::class.java)
-                startActivity(intent)
                 return  true
             }
             R.id.pagar -> {
-                val intent = Intent(this,CarritoActivity::class.java)
+                val intent = Intent(this,PagarActivity::class.java)
+                intent.putExtra("precio", preciototal)
                 startActivity(intent)
                 return true
             }
 
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    @Override
+    override fun onBackPressed() {
+
     }
 }

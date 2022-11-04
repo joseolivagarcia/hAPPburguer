@@ -119,5 +119,16 @@ class PersonalizarActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+
+        //funcionalidad boton pagar
+        binding.btnpagar.setOnClickListener {
+            Toast.makeText(this,"Para pagar accede desde el carrito de la compra",Toast.LENGTH_SHORT).show()
+        }
+
+    }
+
+    @Override
+    override fun onBackPressed() {
+
     }
 }

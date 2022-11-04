@@ -3,6 +3,7 @@ package joseoliva.com.happburguer.adapter
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.recyclerview.widget.RecyclerView
 import joseoliva.com.happburguer.R
@@ -16,12 +17,10 @@ class BurguerPedidoViewHolder(view: View): RecyclerView.ViewHolder(view) {
     val nombre = view.findViewById<TextView>(R.id.tvnombre)
     val seleccion = view.findViewById<TextView>(R.id.tvseleccion)
     val btnborrar = view.findViewById<ImageView>(R.id.btnborrar)
-    val btnhome = view.findViewById<ImageView>(R.id.home)
 
     fun render(
         burguerpedidamodel: BurguerPedida,
         onClickDelete: (BurguerPedida) -> Unit){
-
         //relleno las vistas con los datos que obtengo de cada item que recorro
         foto.setImageResource(burguerpedidamodel.foto)
         precio.text = burguerpedidamodel.precio.toString() + "€"

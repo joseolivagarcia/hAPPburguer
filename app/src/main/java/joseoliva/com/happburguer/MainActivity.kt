@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun onItemPagar() {
-        Toast.makeText(this,"Has añadido pulsado pagar",Toast.LENGTH_SHORT).show()
+        Toast.makeText(this,"Para pagar accede desde el carrito de la compra",Toast.LENGTH_SHORT).show()
     }
 
     private fun onItemPedidos() {
@@ -105,8 +105,6 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.home -> {
-                val intent = Intent(this,MainActivity::class.java)
-                startActivity(intent)
                 return  true
             }
             R.id.pedidos -> {
@@ -115,12 +113,16 @@ class MainActivity : AppCompatActivity() {
                 return  true
             }
             R.id.pagar -> {
-                val intent = Intent(this,CarritoActivity::class.java)
-                startActivity(intent)
+                Toast.makeText(this,"Para pagar accede desde el carrito de la compra",Toast.LENGTH_SHORT).show()
                 return  true
             }
 
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    @Override
+    override fun onBackPressed() {
+
     }
 }

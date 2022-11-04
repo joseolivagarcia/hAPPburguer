@@ -22,7 +22,6 @@ class BurguerViewModel(application: Application): AndroidViewModel(application) 
     */
     val listaburguers: LiveData<List<BurguerPedida>>
     val repositorio: BurguerRepositorio
-    var preciototalpedido: Float = 0f
 
     init {
         /* el dao lo obtengo desde la clase BurguerDataBase llamando a la fun getDatabase
