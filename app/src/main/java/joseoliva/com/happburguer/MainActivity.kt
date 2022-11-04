@@ -8,17 +8,22 @@ import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.Toolbar
+import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager2.widget.ViewPager2
 import joseoliva.com.happburguer.adapter.BurguerItemsAdapter
+import joseoliva.com.happburguer.bbdd.BurguerPedida
 import joseoliva.com.happburguer.databinding.ActivityMainBinding
 import joseoliva.com.happburguer.modeloviewpager.BurguerModelViewPager
 import joseoliva.com.happburguer.provider.BurguersProvider
+import joseoliva.com.happburguer.viewmodel.BurguerViewModel
 
 class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding
     lateinit var burguerAdapter: BurguerItemsAdapter
     var burguerlistppal: MutableList<BurguerModelViewPager> = BurguersProvider.burguersListViewpager.toMutableList()
+    lateinit var viewModel: BurguerViewModel
+    var id: Int = -1 //le doy este valor porque luego usare el real
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +33,12 @@ class MainActivity : AppCompatActivity() {
         //inicio mi toolbar y sobreescribo los metodos necesarios (al final)
         val toolbar: Toolbar = binding.toolbar
         setSupportActionBar(toolbar)
+
+        //inicializamos el viewmodel con un provider y le pasamos nuestra clase de PostitViewModel
+        viewModel = ViewModelProvider(
+            this,
+            ViewModelProvider.AndroidViewModelFactory.getInstance(application)
+        ).get(BurguerViewModel::class.java)
 
         setBurguersViewpager() //llamo al metodo que pone los items en el viewpager(con el adapter)
 
@@ -58,6 +69,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun onItemCarrito(burguermodel: BurguerModelViewPager) {
+        //si añado la burguer desde aqui quiere decir que va completa
+        val personalizacion = "Completa"
+        val newBurguerPedida = BurguerPedida(
+            burguermodel.fotoburguer,
+            burguermodel.nombre,
+            burguermodel.precio.toInt(),
+            personalizacion
+        )
+        viewModel.insertburguer(newBurguerPedida)
         Toast.makeText(this,"Has añadido ${burguermodel.nombre} al carrito",Toast.LENGTH_SHORT).show()
     }
 

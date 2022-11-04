@@ -9,7 +9,7 @@ class BurguersProvider {
         val burguersListViewpager = listOf<BurguerModelViewPager>(
             BurguerModelViewPager(
                 fotoburguer = R.drawable.campera,
-                precio = "18€",
+                precio = "18",
                 nombre = "Campera",
                 descripcion = "Magnífica hamburguesa con ingredientes de proximidad para que sientas todo el sabor!",
                 ingrediente1 = "Pepino",
@@ -20,7 +20,7 @@ class BurguersProvider {
             ),
             BurguerModelViewPager(
                 fotoburguer = R.drawable.clasica,
-                precio = "15€",
+                precio = "15",
                 nombre = "Clásica",
                 descripcion = "Magnífica hamburguesa con carne de vacuno 100% y pan brioche. Requetebuena!",
                 ingrediente1 = "Pepino",
@@ -31,7 +31,7 @@ class BurguersProvider {
             ),
             BurguerModelViewPager(
                 fotoburguer = R.drawable.infantil,
-                precio = "12€",
+                precio = "12",
                 nombre = "Infantil",
                 descripcion = "Magnífica hamburguesa con un tamaño ideal para los más pequeños sin renunciar a todo su sabor!",
                 ingrediente1 = "Pepino",
@@ -42,7 +42,7 @@ class BurguersProvider {
             ),
             BurguerModelViewPager(
                 fotoburguer = R.drawable.doblecompleta,
-                precio = "25€",
+                precio = "25",
                 nombre = "Doble Completa",
                 descripcion = "Impresionante doble ración de carne de ternera gallega 100%. Solo apta para los más valientes!",
                 ingrediente1 = "Pepino",
@@ -53,7 +53,7 @@ class BurguersProvider {
             ),
             BurguerModelViewPager(
                 fotoburguer = R.drawable.vegana,
-                precio = "20€",
+                precio = "20",
                 nombre = "Vegana",
                 descripcion = "Magnífica hamburguesa con 'carne' de lentejas y soja para los que quieren disfrutar del sabor sin renunciar a una buena hamburguesa ",
                 ingrediente1 = "Pepino",

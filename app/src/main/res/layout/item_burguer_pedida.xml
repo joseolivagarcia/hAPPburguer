@@ -13,7 +13,7 @@
     android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@+id/foto"
+        android:id="@+id/ivfotoburguer"
         android:layout_width="150dp"
         android:layout_height="150dp"
         app:layout_constraintTop_toTopOf="parent"
@@ -24,13 +24,13 @@
         android:id="@+id/tvprecio"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginEnd="300dp"
         android:background="@drawable/icon_background"
         android:gravity="center_vertical|center_horizontal"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:text="20€"
-        android:textSize="20dp"/>
+        app:layout_constraintEnd_toEndOf="@+id/ivfotoburguer"
+        app:layout_constraintStart_toStartOf="@+id/ivfotoburguer"
+        tools:text="20€" />
 
     <TextView
         android:id="@+id/tvnombre"
@@ -41,14 +41,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.479"
-        app:layout_constraintStart_toEndOf="@id/foto"
+        app:layout_constraintStart_toEndOf="@id/ivfotoburguer"
         tools:text="CAMPERA"/>
     <TextView
         android:id="@+id/tvseleccion"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         tools:text="Has elegido la heamburguesa sin pepino, con cebolla, sin queso, sin lechuga, con tomate"
-        app:layout_constraintStart_toEndOf="@id/foto"
+        app:layout_constraintStart_toEndOf="@id/ivfotoburguer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvnombre"
         android:layout_marginLeft="20dp"
@@ -58,7 +58,7 @@
         android:id="@+id/btnborrar"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        app:layout_constraintStart_toEndOf="@id/foto"
+        app:layout_constraintStart_toEndOf="@id/ivfotoburguer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:src="@drawable/ic_delete"/>

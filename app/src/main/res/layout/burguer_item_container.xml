@@ -25,10 +25,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="25€"
+        tools:text="25"
         android:gravity="center_vertical|center_horizontal"
         android:textSize="24dp"
         android:textColor="@color/black"/>
+
     <TextView
         android:id="@+id/tvnombre"
         android:layout_width="match_parent"
