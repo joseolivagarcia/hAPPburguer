@@ -7,7 +7,10 @@ import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
+import joseoliva.com.happburguer.bbdd.BurguerPedida
 import joseoliva.com.happburguer.databinding.ActivityPersonalizarBinding
+import joseoliva.com.happburguer.viewmodel.BurguerViewModel
 
 class PersonalizarActivity : AppCompatActivity() {
 
@@ -28,10 +31,18 @@ class PersonalizarActivity : AppCompatActivity() {
     lateinit var ing4: String
     lateinit var ing5: String
 
+    lateinit var viewModel: BurguerViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityPersonalizarBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        //inicializamos el viewmodel con un provider y le pasamos nuestra clase de BurguerViewModel
+        viewModel = ViewModelProvider(
+            this,
+            ViewModelProvider.AndroidViewModelFactory.getInstance(application)
+        ).get(BurguerViewModel::class.java)
 
         foto = binding.fotoburguer
         precio = binding.tvprecio
@@ -90,8 +101,10 @@ class PersonalizarActivity : AppCompatActivity() {
             }else{
                 ing5 = "Sin $ing5recibido"
             }
-            val seleccion = "Has eleegido tu hamburguesa $ing1, $ing2, $ing3, $ing4, $ing5"
-            Toast.makeText(this,"Has eleegido tu hamburguesa $ing1, $ing2, $ing3, $ing4, $ing5",Toast.LENGTH_SHORT).show()
+            val seleccion = "$ing1, $ing2, $ing3, $ing4, $ing5"
+            val newBurguer = BurguerPedida(fotorecibida,nombrerecibido.toString(),preciorecibido!!.toInt(),seleccion)
+            viewModel.insertburguer(newBurguer)
+            Toast.makeText(this,"Has añadido tu hamburguesa $ing1, $ing2, $ing3, $ing4, $ing5",Toast.LENGTH_SHORT).show()
         }
 
         //funcionalidad para el boton de tramitar pedido

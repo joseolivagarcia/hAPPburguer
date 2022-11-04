@@ -17,6 +17,7 @@ interface BurguerPedidaDao {
     suspend fun updateBurguer(burguer: BurguerPedida)
 
     //funcion para sumar el precio del total del pedido
-
+    @Query("Select SUM(precio) From burguerpedidas")
+    fun getPrecioTotal(): Float
 
 }

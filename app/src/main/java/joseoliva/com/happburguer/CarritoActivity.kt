@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.ImageView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.Observer
@@ -35,7 +36,7 @@ class CarritoActivity : AppCompatActivity() {
         //inicializamos el manager del recycler
         recyclerview.layoutManager = LinearLayoutManager(this)
         //inicializamos el adapter y le pasamos como parametros el contexto y las interface que necesita
-        val burguerRVAdapter = BurguerPedidoAdapter(onClickDelete = {burguerPedida -> onItemDelete(burguerPedida)  })
+        val burguerRVAdapter = BurguerPedidoAdapter(onClickDelete = {burguerPedida -> onItemDelete(burguerPedida)})
         //ponemos el adapter que acabamos de referenciar al recyclerview
         recyclerview.adapter = burguerRVAdapter
 
@@ -50,9 +51,16 @@ class CarritoActivity : AppCompatActivity() {
         viewModel.listaburguers.observe(this, Observer { list -> list?.let{
             //actualizamos la lista
             burguerRVAdapter.updateList(it)
-            binding.tvpreciototal.text = "28€"
+            binding.tvpreciototal.text = viewModel.preciototalpedido.toString()
         }
         })
+
+        //funcionalidad del boton home
+        binding.home.setOnClickListener {
+            val intent = Intent(this,MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
 
     }
 

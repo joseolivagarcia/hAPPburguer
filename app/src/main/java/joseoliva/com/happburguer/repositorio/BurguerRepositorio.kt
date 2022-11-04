@@ -26,4 +26,5 @@ class BurguerRepositorio(val burguerdao: BurguerPedidaDao) {
     suspend fun updateburguer(burguer: BurguerPedida){
         burguerdao.updateBurguer(burguer)
     }
+
 }

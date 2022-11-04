@@ -22,11 +22,11 @@
 
     <TextView
         android:id="@+id/tvprecio"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:background="@drawable/icon_background"
         android:gravity="center_vertical|center_horizontal"
-        android:textSize="20dp"
+        android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/ivfotoburguer"
         app:layout_constraintStart_toStartOf="@+id/ivfotoburguer"
@@ -42,12 +42,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.479"
         app:layout_constraintStart_toEndOf="@id/ivfotoburguer"
-        tools:text="CAMPERA"/>
+        tools:text="CAMPERA"
+        android:textColor="@color/black"/>
     <TextView
         android:id="@+id/tvseleccion"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         tools:text="Has elegido la heamburguesa sin pepino, con cebolla, sin queso, sin lechuga, con tomate"
+        android:textColor="@color/marron"
+        android:textStyle="italic"
         app:layout_constraintStart_toEndOf="@id/ivfotoburguer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvnombre"
@@ -56,11 +59,11 @@
         android:gravity="center"/>
     <ImageView
         android:id="@+id/btnborrar"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        app:layout_constraintStart_toEndOf="@id/ivfotoburguer"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginRight="10dp"
         android:src="@drawable/ic_delete"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
 

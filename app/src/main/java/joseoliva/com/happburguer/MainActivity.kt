@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         val toolbar: Toolbar = binding.toolbar
         setSupportActionBar(toolbar)
 
-        //inicializamos el viewmodel con un provider y le pasamos nuestra clase de PostitViewModel
+        //inicializamos el viewmodel con un provider y le pasamos nuestra clase de BurguerViewModel
         viewModel = ViewModelProvider(
             this,
             ViewModelProvider.AndroidViewModelFactory.getInstance(application)

@@ -34,6 +34,15 @@
         tools:text="150€"
         android:textSize="30dp"/>
     <ImageView
+        android:id="@+id/home"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/ic_home"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="90dp"/>
+    <ImageView
         android:id="@+id/pagarpedido"
         android:layout_width="40dp"
         android:layout_height="40dp"

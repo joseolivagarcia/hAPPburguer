@@ -16,6 +16,7 @@ class BurguerPedidoViewHolder(view: View): RecyclerView.ViewHolder(view) {
     val nombre = view.findViewById<TextView>(R.id.tvnombre)
     val seleccion = view.findViewById<TextView>(R.id.tvseleccion)
     val btnborrar = view.findViewById<ImageView>(R.id.btnborrar)
+    val btnhome = view.findViewById<ImageView>(R.id.home)
 
     fun render(
         burguerpedidamodel: BurguerPedida,
@@ -27,7 +28,7 @@ class BurguerPedidoViewHolder(view: View): RecyclerView.ViewHolder(view) {
         nombre.text = burguerpedidamodel.nombre
         seleccion.text = burguerpedidamodel.personalizacion
 
-        //doy funcionalidad al boton de borrar
+        //doy funcionalidad al boton de borrar y al de home
         btnborrar.setOnClickListener {
             onClickDelete(burguerpedidamodel)
         }
