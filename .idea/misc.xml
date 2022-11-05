@@ -6,8 +6,10 @@
         <entry key="app/src/main/res/drawable/ic_carrito.xml" value="0.2825" />
         <entry key="app/src/main/res/drawable/icon_background.xml" value="0.2825" />
         <entry key="app/src/main/res/drawable/icon_outer_background.xml" value="0.1355" />
+        <entry key="app/src/main/res/drawable/splash_background.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_carrito.xml" value="0.21666666666666667" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.4166666666666667" />
+        <entry key="app/src/main/res/layout/activity_pagar.xml" value="0.4166666666666667" />
         <entry key="app/src/main/res/layout/activity_personalizar.xml" value="0.21666666666666667" />
         <entry key="app/src/main/res/layout/burguer_item_container.xml" value="0.22" />
         <entry key="app/src/main/res/layout/item_burguer_pedida.xml" value="0.215625" />

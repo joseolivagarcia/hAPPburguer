@@ -55,7 +55,7 @@ class BurguersProvider {
                 fotoburguer = R.drawable.vegana,
                 precio = "20",
                 nombre = "Vegana",
-                descripcion = "Magnífica hamburguesa con 'carne' de lentejas y soja para los que quieren disfrutar del sabor sin renunciar a una buena hamburguesa ",
+                descripcion = "Magnífica hamburguesa de lentejas y soja para disfrutar del sabor sin renunciar a una buena hamburguesa ",
                 ingrediente1 = "Pepino",
                 ingrediente2 = "Cebolla",
                 ingrediente3 = "Tomate",
