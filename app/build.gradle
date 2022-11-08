@@ -73,5 +73,7 @@ dependencies {
     //para fotos circulares y para formas geometricas en layouts
     implementation 'io.github.florent37:shapeofview:1.4.7'
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+    //dependencia para toast personalizado
+    implementation 'io.github.muddz:styleabletoast:2.4.0'
 
 }

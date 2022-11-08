@@ -1,6 +1,7 @@
 package joseoliva.com.happburguer
 
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -12,6 +13,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import io.github.muddz.styleabletoast.StyleableToast
 import joseoliva.com.happburguer.adapter.BurguerPedidoAdapter
 import joseoliva.com.happburguer.bbdd.BurguerPedida
 import joseoliva.com.happburguer.databinding.ActivityCarritoBinding
@@ -23,6 +25,8 @@ class CarritoActivity : AppCompatActivity() {
     lateinit var viewModel: BurguerViewModel
     lateinit var recyclerview: RecyclerView
     var preciototal = 0f
+    var creditoinicial = 50
+    var contadordineroextra = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -74,6 +78,33 @@ class CarritoActivity : AppCompatActivity() {
             finish()
         }
 
+        //funcionalidad para dinero extra!
+        binding.tvcredito.setOnClickListener {
+            contadordineroextra++
+            if(contadordineroextra == 5){
+                creditoinicial = creditoinicial +50
+                binding.tvcredito.text = creditoinicial.toString() + "€"
+                contadordineroextra = 1
+                //implementando la dependencia StyleableToast creamos Toast personalizados
+                StyleableToast
+                    .Builder(this)
+                    .text("¡Has ganado 50€!")
+                    .textColor(Color.WHITE)
+                    .backgroundColor(Color.parseColor("#592503"))
+                    .stroke(3, Color.parseColor("#FFFFFFFF"))
+                    .iconStart(R.drawable.icomoneda)
+                    .iconEnd(R.drawable.icomoneda)
+                    .show()
+            }
+            if(creditoinicial<preciototal){
+                binding.pagarpedido.setImageResource(R.drawable.creditcardoff)
+                binding.pagarpedido.isClickable = false
+            }else{
+                binding.pagarpedido.setImageResource(R.drawable.creditcard)
+                binding.pagarpedido.isClickable = true
+            }
+        }
+
     }
 
     private fun onContador(burguerPedida: BurguerPedida) {
@@ -82,6 +113,9 @@ class CarritoActivity : AppCompatActivity() {
     }
 
     private fun sumarprecios(it: List<BurguerPedida>) {
+        //inicio la var de credito inicial antes de sumar los precios
+        binding.tvcredito.text = creditoinicial.toString() + "€"
+
         preciototal = 0f
         if(it.size > 0){
             for(b in it){
@@ -92,7 +126,18 @@ class CarritoActivity : AppCompatActivity() {
             binding.tvpreciototal.text = preciototal.toString() + "€"
         }
 
+        //apago el icono de la tarjeta si no tengo credito suficiente
+        if(creditoinicial<preciototal){
+            binding.pagarpedido.setImageResource(R.drawable.creditcardoff)
+            binding.pagarpedido.isClickable = false
+        }else{
+            binding.pagarpedido.setImageResource(R.drawable.creditcard)
+            binding.pagarpedido.isClickable = true
+        }
+
     }
+
+
 
     private fun onItemDelete(burguerPedida: BurguerPedida) {
         val dialog = AlertDialog.Builder(this)
@@ -128,10 +173,26 @@ class CarritoActivity : AppCompatActivity() {
                 return  true
             }
             R.id.pagar -> {
-                val intent = Intent(this,PagarActivity::class.java)
-                intent.putExtra("precio", preciototal)
-                startActivity(intent)
-                return true
+                if(creditoinicial<preciototal){
+                    //implementando la dependencia StyleableToast creamos Toast personalizados
+                    StyleableToast
+                        .Builder(this)
+                        .text("No tienes suficiente crédito para pagar")
+                        .textColor(Color.WHITE)
+                        .backgroundColor(Color.parseColor("#592503"))
+                        .stroke(3, Color.parseColor("#FFFFFFFF"))
+                        .iconStart(R.drawable.creditcard)
+                        .iconEnd(R.drawable.creditcard)
+                        .show()
+                    return true
+                }else{
+                    val intent = Intent(this,PagarActivity::class.java)
+                    intent.putExtra("precio", preciototal)
+                    startActivity(intent)
+                    return true
+
+                }
+
             }
 
         }

@@ -43,7 +43,8 @@
         app:layout_constraintHorizontal_bias="0.479"
         app:layout_constraintStart_toEndOf="@id/ivfotoburguer"
         tools:text="CAMPERA"
-        android:textColor="@color/black"/>
+        android:textColor="@color/black"
+        android:fontFamily="@font/tiza"/>
     <TextView
         android:id="@+id/tvseleccion"
         android:layout_width="0dp"
@@ -51,6 +52,7 @@
         tools:text="Has elegido la heamburguesa sin pepino, con cebolla, sin queso, sin lechuga, con tomate"
         android:textColor="@color/marron"
         android:textStyle="italic"
+        android:fontFamily="@font/hand_normal"
         app:layout_constraintStart_toEndOf="@id/ivfotoburguer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvnombre"
@@ -75,7 +77,8 @@
         app:layout_constraintStart_toEndOf="@+id/btnmenos"
         tools:text="1"
         android:layout_marginLeft="10dp"
-        android:textColor="@color/black"/>
+        android:textColor="@color/black"
+        android:fontFamily="@font/hand_normal"/>
     <ImageView
         android:id="@+id/btnmas"
         android:layout_width="25dp"

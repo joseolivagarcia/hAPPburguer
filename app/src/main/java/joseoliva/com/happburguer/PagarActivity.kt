@@ -24,7 +24,12 @@ class PagarActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         precioAPagar = intent.getFloatExtra("precio",0f)
-        Toast.makeText(this,"voy a pagar $precioAPagar",Toast.LENGTH_SHORT).show()
+        binding.tvcargo.text = precioAPagar.toString()
+
+        //funcionalidad al boton de cargo
+        binding.btncargar.setOnClickListener {
+
+        }
 
     }
 

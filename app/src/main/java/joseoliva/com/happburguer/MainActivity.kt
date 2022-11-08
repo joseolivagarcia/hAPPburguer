@@ -1,6 +1,7 @@
 package joseoliva.com.happburguer
 
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -10,6 +11,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager2.widget.ViewPager2
+import io.github.muddz.styleabletoast.StyleableToast
 import joseoliva.com.happburguer.adapter.BurguerItemsAdapter
 import joseoliva.com.happburguer.bbdd.BurguerPedida
 import joseoliva.com.happburguer.databinding.ActivityMainBinding
@@ -59,7 +61,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun onItemPagar() {
-        Toast.makeText(this,"Para pagar accede desde el carrito de la compra",Toast.LENGTH_SHORT).show()
+        //implementando la dependencia StyleableToast creamos Toast personalizados
+        StyleableToast
+            .Builder(this)
+            .text("Para pagar accede desde el carrito de la compra")
+            .textColor(Color.WHITE)
+            .backgroundColor(Color.parseColor("#592503"))
+            .stroke(3, Color.parseColor("#FFFFFFFF"))
+            .iconStart(R.drawable.ic_carro)
+            .iconEnd(R.drawable.ic_carro)
+            .show()
     }
 
     private fun onItemPedidos() {
@@ -79,7 +90,16 @@ class MainActivity : AppCompatActivity() {
             1
         )
         viewModel.insertburguer(newBurguerPedida)
-        Toast.makeText(this,"Has añadido ${burguermodel.nombre} al carrito",Toast.LENGTH_SHORT).show()
+        //implementando la dependencia StyleableToast creamos Toast personalizados
+        StyleableToast
+            .Builder(this)
+            .text("Has añadido una ${burguermodel.nombre} al carrito")
+            .textColor(Color.WHITE)
+            .backgroundColor(Color.parseColor("#592503"))
+            .stroke(3, Color.parseColor("#FFFFFFFF"))
+            .iconStart(R.drawable.burguertoast)
+            .iconEnd(R.drawable.burguertoast)
+            .show()
     }
 
     private fun onItemEdit(burguermodel: BurguerModelViewPager) {
@@ -114,7 +134,16 @@ class MainActivity : AppCompatActivity() {
                 return  true
             }
             R.id.pagar -> {
-                Toast.makeText(this,"Para pagar accede desde el carrito de la compra",Toast.LENGTH_SHORT).show()
+                //implementando la dependencia StyleableToast creamos Toast personalizados
+                StyleableToast
+                    .Builder(this)
+                    .text("Para pagar accede desde el carrito de la compra")
+                    .textColor(Color.WHITE)
+                    .backgroundColor(Color.parseColor("#592503"))
+                    .stroke(3, Color.parseColor("#FFFFFFFF"))
+                    .iconStart(R.drawable.ic_carro)
+                    .iconEnd(R.drawable.ic_carro)
+                    .show()
                 return  true
             }
 

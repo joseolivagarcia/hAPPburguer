@@ -1,6 +1,7 @@
 package joseoliva.com.happburguer
 
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.CheckBox
@@ -8,6 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import io.github.muddz.styleabletoast.StyleableToast
 import joseoliva.com.happburguer.bbdd.BurguerPedida
 import joseoliva.com.happburguer.databinding.ActivityPersonalizarBinding
 import joseoliva.com.happburguer.viewmodel.BurguerViewModel
@@ -104,7 +106,16 @@ class PersonalizarActivity : AppCompatActivity() {
             val seleccion = "$ing1, $ing2, $ing3, $ing4, $ing5"
             val newBurguer = BurguerPedida(fotorecibida,nombrerecibido.toString(),preciorecibido!!.toInt(),seleccion,1)
             viewModel.insertburguer(newBurguer)
-            Toast.makeText(this,"Has añadido tu hamburguesa $ing1, $ing2, $ing3, $ing4, $ing5",Toast.LENGTH_SHORT).show()
+            //implementando la dependencia StyleableToast creamos Toast personalizados
+            StyleableToast
+                .Builder(this)
+                .text("Has añadido tu hamburguesa $ing1, $ing2, $ing3, $ing4, $ing5")
+                .textColor(Color.WHITE)
+                .backgroundColor(Color.parseColor("#592503"))
+                .stroke(3, Color.parseColor("#FFFFFFFF"))
+                .iconStart(R.drawable.burguertoast)
+                .iconEnd(R.drawable.burguertoast)
+                .show()
         }
 
         //funcionalidad para el boton de tramitar pedido
@@ -122,7 +133,16 @@ class PersonalizarActivity : AppCompatActivity() {
 
         //funcionalidad boton pagar
         binding.btnpagar.setOnClickListener {
-            Toast.makeText(this,"Para pagar accede desde el carrito de la compra",Toast.LENGTH_SHORT).show()
+            //implementando la dependencia StyleableToast creamos Toast personalizados
+            StyleableToast
+                .Builder(this)
+                .text("Para pagar accede desde el carrito de la compra")
+                .textColor(Color.WHITE)
+                .backgroundColor(Color.parseColor("#592503"))
+                .stroke(3, Color.parseColor("#FFFFFFFF"))
+                .iconStart(R.drawable.ic_carro)
+                .iconEnd(R.drawable.ic_carro)
+                .show()
         }
 
     }

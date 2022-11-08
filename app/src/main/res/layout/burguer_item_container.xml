@@ -95,7 +95,8 @@
         tools:text="Nombre"
         android:textSize="20dp"
         android:textStyle="bold|italic"
-        android:layout_marginTop="15dp"/>
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/tiza"/>
 
     <TextView
         android:id="@+id/tvdescripcion"
@@ -107,6 +108,7 @@
         android:gravity="center"
         android:textColor="@color/black"
         android:textStyle="italic"
+        android:fontFamily="@font/hand_normal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvnombre"
@@ -129,6 +131,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="10dp"
         tools:text="Ingrediente 1"
+        android:fontFamily="@font/tiza"
         android:textColor="@color/white"
         android:gravity="center"/>
     <TextView
@@ -140,6 +143,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="10dp"
         tools:text="Ingrediente 2"
+        android:fontFamily="@font/tiza"
         android:textColor="@color/white"
         android:gravity="center"/>
     <TextView
@@ -151,6 +155,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="10dp"
         tools:text="Ingrediente 3"
+        android:fontFamily="@font/tiza"
         android:textColor="@color/white"
         android:gravity="center"/>
     <TextView
@@ -162,6 +167,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="10dp"
         tools:text="Ingrediente 4"
+        android:fontFamily="@font/tiza"
         android:textColor="@color/white"
         android:gravity="center"/>
     <TextView
@@ -173,6 +179,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="10dp"
         tools:text="Ingrediente 5"
+        android:fontFamily="@font/tiza"
         android:textColor="@color/white"
         android:gravity="center"/>
     </LinearLayout>
