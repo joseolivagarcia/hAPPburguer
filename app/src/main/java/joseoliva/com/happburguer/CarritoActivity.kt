@@ -37,7 +37,9 @@ class CarritoActivity : AppCompatActivity() {
         //inicializamos el manager del recycler
         recyclerview.layoutManager = LinearLayoutManager(this)
         //inicializamos el adapter y le pasamos como parametros el contexto y las interface que necesita
-        val burguerRVAdapter = BurguerPedidoAdapter(onClickDelete = {burguerPedida -> onItemDelete(burguerPedida)})
+        val burguerRVAdapter = BurguerPedidoAdapter(
+            onClickDelete = {burguerPedida -> onItemDelete(burguerPedida)},
+            onCounter = {burguerPedida -> onContador(burguerPedida)})
         //ponemos el adapter que acabamos de referenciar al recyclerview
         recyclerview.adapter = burguerRVAdapter
 
@@ -48,7 +50,8 @@ class CarritoActivity : AppCompatActivity() {
         ).get(BurguerViewModel::class.java)
 
         //Llamamos a la lista de postit del viewModel para observar los cambios que haya en la lista
-        //lo puedo "observar" porque es un LiveData
+        //lo puedo "observar" porque es un LiveData y cada vez que la lista cambie algo, se actualiza
+        //y actualizamos el total a pagar
         viewModel.listaburguers.observe(this, Observer { list -> list?.let{
             //actualizamos la lista
             burguerRVAdapter.updateList(it)
@@ -73,11 +76,16 @@ class CarritoActivity : AppCompatActivity() {
 
     }
 
+    private fun onContador(burguerPedida: BurguerPedida) {
+        //actualizamos la hamburguesa para guardar la cantidad que haya elegido el usuario
+        viewModel.updateburguer(burguerPedida)
+    }
+
     private fun sumarprecios(it: List<BurguerPedida>) {
         preciototal = 0f
         if(it.size > 0){
             for(b in it){
-                preciototal += b.precio.toFloat()
+                preciototal += b.precio.toFloat() * b.cantidad
                 binding.tvpreciototal.text = preciototal.toString() + "€"
             }
         }else{

@@ -75,7 +75,8 @@ class MainActivity : AppCompatActivity() {
             burguermodel.fotoburguer,
             burguermodel.nombre,
             burguermodel.precio.toInt(),
-            personalizacion
+            personalizacion,
+            1
         )
         viewModel.insertburguer(newBurguerPedida)
         Toast.makeText(this,"Has añadido ${burguermodel.nombre} al carrito",Toast.LENGTH_SHORT).show()

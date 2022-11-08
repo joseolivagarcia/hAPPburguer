@@ -7,7 +7,8 @@ import joseoliva.com.happburguer.R
 import joseoliva.com.happburguer.bbdd.BurguerPedida
 
 class BurguerPedidoAdapter(
-    val onClickDelete: (BurguerPedida) -> Unit): RecyclerView.Adapter<BurguerPedidoViewHolder>() {
+    val onClickDelete: (BurguerPedida) -> Unit,
+    val onCounter:(BurguerPedida) -> Unit): RecyclerView.Adapter<BurguerPedidoViewHolder>() {
 
     //creo una var de lista donde guardare todos las burguers pedidas
     private var allBurguersPedidas = ArrayList<BurguerPedida>()
@@ -19,7 +20,7 @@ class BurguerPedidoAdapter(
 
     override fun onBindViewHolder(holder: BurguerPedidoViewHolder, position: Int) {
         val item = allBurguersPedidas[position]
-        holder.render(item,onClickDelete)
+        holder.render(item,onClickDelete,onCounter)
     }
 
     override fun getItemCount(): Int {

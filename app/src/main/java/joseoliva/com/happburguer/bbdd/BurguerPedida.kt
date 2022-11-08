@@ -14,7 +14,9 @@ data class BurguerPedida(
     @ColumnInfo(name = "precio")
     val precio: Int,
     @ColumnInfo(name = "personalizacion")
-    val personalizacion: String
+    val personalizacion: String,
+    @ColumnInfo(name = "cantidad")
+    var cantidad: Int
 )
 {
     @PrimaryKey(autoGenerate = true)

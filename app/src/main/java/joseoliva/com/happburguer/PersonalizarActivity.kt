@@ -102,7 +102,7 @@ class PersonalizarActivity : AppCompatActivity() {
                 ing5 = "Sin $ing5recibido"
             }
             val seleccion = "$ing1, $ing2, $ing3, $ing4, $ing5"
-            val newBurguer = BurguerPedida(fotorecibida,nombrerecibido.toString(),preciorecibido!!.toInt(),seleccion)
+            val newBurguer = BurguerPedida(fotorecibida,nombrerecibido.toString(),preciorecibido!!.toInt(),seleccion,1)
             viewModel.insertburguer(newBurguer)
             Toast.makeText(this,"Has añadido tu hamburguesa $ing1, $ing2, $ing3, $ing4, $ing5",Toast.LENGTH_SHORT).show()
         }
