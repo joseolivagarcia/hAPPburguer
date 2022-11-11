@@ -31,10 +31,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginLeft="20dp"
         android:layout_marginBottom="40dp"
-        android:text="Crédito Actual: "
-        android:textSize="18dp"
-        android:textColor="@color/marron"
-        android:textStyle="bold"/>
+        android:text="Crédito Actual "
+        android:fontFamily="@font/tiza"
+        android:textSize="14dp"
+        android:textColor="@color/black"/>
     <TextView
         android:id="@+id/tvcredito"
         android:layout_width="wrap_content"
@@ -44,9 +44,9 @@
         android:layout_marginLeft="5dp"
         android:layout_marginBottom="40dp"
         tools:text="50€ "
+        android:fontFamily="@font/hand_normal"
         android:textSize="18dp"
-        android:textColor="@color/marron"
-        android:textStyle="bold"/>
+        android:textColor="@color/black"/>
     <TextView
         android:id="@+id/tvtotalapagar"
         android:layout_width="wrap_content"
@@ -55,10 +55,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginLeft="20dp"
         android:layout_marginBottom="10dp"
-        android:text="Toatal a Pagar: "
-        android:textSize="18dp"
-        android:textColor="@color/marron"
-        android:textStyle="bold"/>
+        android:text="Toatal a Pagar "
+        android:fontFamily="@font/tiza"
+        android:textSize="14dp"
+        android:textColor="@color/black"/>
     <TextView
         android:id="@+id/tvpreciototal"
         android:layout_width="wrap_content"
@@ -68,9 +68,10 @@
         android:layout_marginLeft="5dp"
         android:layout_marginBottom="5dp"
         tools:text="150€"
+        android:fontFamily="@font/hand_normal"
         android:textSize="24dp"
-        android:textColor="@color/marron"
-        android:textStyle="bold"/>
+        android:textColor="@color/black"
+        />
     <ImageView
         android:id="@+id/home"
         android:layout_width="40dp"

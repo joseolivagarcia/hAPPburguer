@@ -8,10 +8,10 @@
     <item
         android:left="10dp"
         android:right="10dp"
-        android:top="260dp"
-        android:bottom="260dp"
+        android:top="230dp"
+        android:bottom="230dp"
         android:gravity="center">
-        <bitmap android:src="@drawable/splashfoto"/>
+        <bitmap android:src="@drawable/brasas"/>
 
     </item>
 

@@ -39,6 +39,7 @@
         android:gravity="center"
         android:fontFamily="@font/tiza"
         tools:text="Nombre"
+        android:textColor="@color/black"
         android:textSize="20dp"
         android:textStyle="bold|italic"
         android:layout_marginTop="5dp"/>
@@ -63,7 +64,7 @@
         android:orientation="vertical"
         android:gravity="center_horizontal"
         app:layout_constraintTop_toBottomOf="@id/tvdescripcion"
-        android:background="@color/marron">
+        android:background="@drawable/bg_color">
     <CheckBox
         android:id="@+id/cbingrediente1"
         android:layout_width="wrap_content"

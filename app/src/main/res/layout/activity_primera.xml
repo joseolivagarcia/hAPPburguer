@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PrimeraActivity"
+    android:background="@drawable/bg_color">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Menú brAPPsas"
+        android:fontFamily="@font/hand_normal"
+        android:textSize="24dp"
+        android:textStyle="bold|italic"
+        android:textAllCaps="false"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="30dp"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/burguers"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/burguer"
+        app:civ_border_color="@color/dorado"
+        app:civ_border_width="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.141"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.277"/>
+
+    <TextView
+        android:id="@+id/tvburguers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/tiza"
+        android:text="HAMBURGUESAS"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/burguers" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/pizzas"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/pizza"
+        app:civ_border_color="@color/dorado"
+        app:civ_border_width="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/burguers"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.277" />
+
+    <TextView
+        android:id="@+id/tvpizzas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="264dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/tiza"
+        android:text="PIZZAS"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pizzas" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/pasta"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/pasta"
+        app:civ_border_color="@color/dorado"
+        app:civ_border_width="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.141"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/burguers"
+        app:layout_constraintVertical_bias="0.388" />
+
+    <TextView
+        android:id="@+id/tvpasta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/tiza"
+        android:text="PASTAS"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pasta" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/ensalada"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/ensalada"
+        app:civ_border_color="@color/dorado"
+        app:civ_border_width="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/pasta"
+        app:layout_constraintTop_toBottomOf="@id/pizzas"
+        app:layout_constraintVertical_bias="0.388" />
+
+    <TextView
+        android:id="@+id/tvensaladas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="248dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/tiza"
+        android:text="ENSALADAS"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ensalada" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

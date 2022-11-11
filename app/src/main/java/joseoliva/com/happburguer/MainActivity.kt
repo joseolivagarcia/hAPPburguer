@@ -113,7 +113,6 @@ class MainActivity : AppCompatActivity() {
         intent.putExtra("ingrediente4",burguermodel.ingrediente4)
         intent.putExtra("ingrediente5",burguermodel.ingrediente5)
         startActivity(intent)
-        Toast.makeText(this,"Has seleccionado ${burguermodel.nombre}",Toast.LENGTH_SHORT).show()
     }
 
     //para poner menus en el toolbar sobreescribo estos dos metodos
@@ -126,6 +125,8 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.home -> {
+                val intent = Intent(this,PrimeraActivity::class.java)
+                startActivity(intent)
                 return  true
             }
             R.id.pedidos -> {
@@ -151,8 +152,4 @@ class MainActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    @Override
-    override fun onBackPressed() {
-
-    }
 }

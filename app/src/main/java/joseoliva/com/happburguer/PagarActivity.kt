@@ -115,8 +115,4 @@ class PagarActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    @Override
-    override fun onBackPressed() {
-
-    }
 }

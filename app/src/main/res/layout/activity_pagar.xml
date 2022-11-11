@@ -29,6 +29,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/ivtarjeta"
         android:text="TOTAL A PAGAR"
+        android:fontFamily="@font/tiza"
         android:gravity="center"
         android:textSize="20sp"
         android:textColor="@color/black"/>
@@ -38,6 +39,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/totaltexto"
         android:text="100€"
+        android:fontFamily="@font/tiza"
         android:textSize="22sp"
         android:gravity="center"
         android:textColor="@color/black"

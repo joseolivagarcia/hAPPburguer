@@ -65,7 +65,7 @@ class CarritoActivity : AppCompatActivity() {
 
         //funcionalidad del boton home
         binding.home.setOnClickListener {
-            val intent = Intent(this,MainActivity::class.java)
+            val intent = Intent(this,PrimeraActivity::class.java)
             startActivity(intent)
             finish()
         }
@@ -165,7 +165,7 @@ class CarritoActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.home -> {
-                val intent = Intent(this,MainActivity::class.java)
+                val intent = Intent(this,PrimeraActivity::class.java)
                 startActivity(intent)
                 return  true
             }
@@ -201,6 +201,8 @@ class CarritoActivity : AppCompatActivity() {
 
     @Override
     override fun onBackPressed() {
-
+        val intent = Intent(this,MainActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 }

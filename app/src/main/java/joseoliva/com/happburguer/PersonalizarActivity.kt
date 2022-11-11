@@ -126,7 +126,7 @@ class PersonalizarActivity : AppCompatActivity() {
 
         //funcionalidad para el boton home
         binding.btnhome.setOnClickListener {
-            val intent = Intent(this,MainActivity::class.java)
+            val intent = Intent(this,PrimeraActivity::class.java)
             startActivity(intent)
             finish()
         }
@@ -147,8 +147,5 @@ class PersonalizarActivity : AppCompatActivity() {
 
     }
 
-    @Override
-    override fun onBackPressed() {
 
-    }
 }
